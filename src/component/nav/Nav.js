@@ -8,7 +8,7 @@ function Nav() {
   const dispatch = useDispatch();
 
   const { toggleLibrary } = uiActions;
-  const libraryIsOpen = useSelector((state) => state.ui.libraryIsOpen);
+
   return (
     <StyledNav>
       <div className="center-container">
