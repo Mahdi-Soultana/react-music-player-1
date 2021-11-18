@@ -28,7 +28,8 @@ function AudioTag() {
   }, [isPlaying, audioSrc]);
 
   useEffect(() => {
-  }, [SetAudioRef, dispatch]);
+    dispatch(SetAudioRef(audioRefs.current));
+  }, [SetAudioRef, dispatch, audioRefs]);
 
   return (
     <audio
