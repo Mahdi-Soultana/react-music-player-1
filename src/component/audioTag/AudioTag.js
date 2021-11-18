@@ -4,14 +4,14 @@ import { playerActions } from "../../redux/player-slice";
 
 function AudioTag() {
   const dispatch = useDispatch();
-  const { setCurrentTime, setDuration, SetAudioRef } = playerActions;
+  const { setCurrentTime, setDuration, SetAudioRef, setNextSong } =
+    playerActions;
   const audioRef = useRef(null);
   const data = useSelector((state) => state.player.data);
   const isPlaying = useSelector((state) => state.player.isPlaying);
-  const audioRefs = useSelector((state) => state.player.audioRef);
+
   const currentSong = useSelector((state) => state.player.currentSong);
   const { audioSrc = "" } = currentSong;
-  console.log(audioRefs);
 
   useEffect(() => {
     async function track() {
@@ -28,8 +28,8 @@ function AudioTag() {
   }, [isPlaying, audioSrc]);
 
   useEffect(() => {
-    dispatch(SetAudioRef(audioRefs.current));
-  }, [SetAudioRef, dispatch, audioRefs]);
+    dispatch(SetAudioRef(audioRef.current));
+  }, [SetAudioRef, dispatch, audioRef]);
 
   return (
     <audio
@@ -40,7 +40,9 @@ function AudioTag() {
       }}
       onLoadedMetadata={(e) => {
         dispatch(setDuration(e.target.duration));
-        console.log(e);
+      }}
+      onEnded={() => {
+        dispatch(setNextSong());
       }}
     ></audio>
   );

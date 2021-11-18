@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 export const PlayerStyles = styled.section`
   display: grid;
   grid-template-columns: min-content 1fr min-content;
@@ -83,5 +83,27 @@ export const PlayerStyles = styled.section`
         right: 7%;
       }
     }
+  }
+
+    position: relative;
+
+
+   transition: .5s ease-in all;
+
+   ${(p) => {
+     if (p.opened === "true") {
+       return css`
+         transform: perspective(1171) rotateY(60deg) rotateZ(-4deg)
+           translate(55px);
+         left: 20%;
+       `;
+     } else {
+       return css`
+         transform: perspective(0) rotateY(0deg) translate(0px);
+         left: 0%;
+       `;
+     }
+   }}
+
   }
 `;

@@ -10,13 +10,18 @@ export const GlobaleStyles = createGlobalStyle`
 }
 html {
     font-size: 62.5%;
+
 }
 body {
+
     font-family :sans-serif;
-    background-color: #efeeff;
+    background-color: #999;
 min-height: 100vh;
  text-transform:capitalize;
  color:#333;
+ width:100%;
+ overflow :hidden ;
+ text-align:center;
 }
 .center-container{
    width:100%;
@@ -42,6 +47,7 @@ a{
 h1{
     font-size:3rem;
     cursor:pointer;
+
 }
 .logo{
     font-size:4rem;
@@ -53,6 +59,7 @@ h3{
     font-weight:700;
 }
 button {
+
     border: rgba(0,0,0,.3) solid 1px;
     border-radius:2px;
     font-size: 2rem;
@@ -73,4 +80,22 @@ outline:none;
       color: #eee;
     }
   }
+
+.back{
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;
+    height:100%;
+    z-index: -3;
+    background-color: #efeeff;
+    top:0;
+    left:0%;
+ transition: .5s ease-in all;
+
+}
+.active{
+    transform:  perspective(1750) rotateY(50deg) ;
+    left:20%
+}
+
 `;

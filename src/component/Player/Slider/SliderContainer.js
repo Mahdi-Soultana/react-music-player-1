@@ -26,13 +26,17 @@ export const SliderContainer = styled.div`
     height: 100%;
     transform: translateX(${(p) => p.x + "%" || "50%"});
     pointer-events: none;
-    background: coral;
+    background: #ffe;
   }
   input {
     cursor: pointer;
     width: 100%;
     appearance: none;
-    background: linear-gradient(to right, red, blue);
+    background: linear-gradient(
+      to right,
+      ${(p) => p.colors[0] || "red"},
+      ${(p) => p.colors[1] || "blue"}
+    );
     border-radius: 10em;
     height: 100%;
     display: flex;

@@ -12,19 +12,17 @@ function LibraryMusique() {
   const { toggleLibrary } = uiActions;
 
   return (
-    libraryIsOpen && (
-      <LibraryMusiqueStyled>
-        <nav>
-          <h1>Library</h1>
-          <MdOutlineLibraryMusic
-            size="3rem"
-            color="#333"
-            onClick={() => dispatch(toggleLibrary())}
-          />
-        </nav>
-        <SongsUL />
-      </LibraryMusiqueStyled>
-    )
+    <LibraryMusiqueStyled opened={String(libraryIsOpen)}>
+      <nav>
+        <h1>Library</h1>
+        <MdOutlineLibraryMusic
+          size="3rem"
+          color="#333"
+          onClick={() => dispatch(toggleLibrary())}
+        />
+      </nav>
+      <SongsUL />
+    </LibraryMusiqueStyled>
   );
 }
 
