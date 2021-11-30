@@ -1,7 +1,7 @@
 import React from "react";
 import { GrMusic } from "react-icons/gr";
 import { StyledNav } from "./StyledNav";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { uiActions } from "../../redux/ui-slice";
 
 function Nav() {

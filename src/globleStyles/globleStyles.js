@@ -80,7 +80,6 @@ outline:none;
       color: #eee;
     }
   }
-
 .back{
     position: absolute;
     width: 100%;

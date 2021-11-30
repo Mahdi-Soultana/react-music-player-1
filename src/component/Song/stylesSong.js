@@ -26,11 +26,11 @@ export const SongContainer = styled.section`
     margin-top: 2vh;
   }
   .img-container {
+    animation: ${rotate} infinite linear 20s;
     ${(p) => {
       if (p.animation === "true") {
         return css`
           animation-play-state: running;
-          animation: ${rotate} infinite linear 20s;
         `;
       } else {
         return css`
