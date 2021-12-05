@@ -17,9 +17,9 @@ export const LibraryMusiqueStyled = styled.aside`
   height: 100%;
   overflow-y: auto;
 
-  background-color: #fff;
+  background-color: ${(p) => p.theme.theme["nav-btn-svg"]};
   li:first-child {
-    border-top: rgba(0, 0, 0, 0.2) solid 1px;
+    border-top: ${(p) => p.theme.theme["color-btn"]} solid 1px;
   }
   nav {
     display: flex;
@@ -30,21 +30,27 @@ export const LibraryMusiqueStyled = styled.aside`
       font-weight: 300;
     }
     svg:hover {
-      fill: coral;
-      color: coral;
+      stroke: ${(p) => p.theme.theme["color-btn"]};
+      color: ${(p) => p.theme.theme["color-btn"]};
     }
     svg {
       cursor: pointer;
+      stroke: ${(p) => p.theme.theme["color-btn"]};
+      color: ${(p) => p.theme.theme["color-btn"]};
+      path {
+        stroke: ${(p) => p.theme.theme["color-btn"]};
+        color: ${(p) => p.theme.theme["color-btn"]};
+      }
     }
   }
   ::-webkit-scrollbar {
     width: 8px;
   }
   ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: ${(p) => p.theme.theme["onhover-control-cl-border"]};
   }
   ::-webkit-scrollbar-thumb {
-    background: #888;
+    background: ${(p) => p.theme.theme["color-btn"]};
 
     border-radius: 10em;
   }
@@ -73,7 +79,7 @@ export const SongLibrary = styled.li`
     align-items: center;
     justify-content: center;
 
-    border-bottom: rgba(0, 0, 0, 0.2) solid 1px;
+    border-bottom: ${(p) => p.theme.theme["color-btn"]} solid 1px;
     padding: 1rem 2rem;
     cursor: pointer;
     &:hover,
@@ -82,7 +88,7 @@ export const SongLibrary = styled.li`
     }
     &:hover h2,
     &:focus h2 {
-      color: white;
+      color: ${(p) => p.theme.theme["color-btn"]};
     }
     .img-container {
       width: 120px;

@@ -47,8 +47,8 @@ export const PlayerStyles = styled.section`
     padding: 0rem;
     background-color: transparent;
     &:hover {
-      color: lightcoral;
-      border-color: lightcoral;
+      color:  ${(p) => p.theme.theme["onhover-control-cl-border"]};
+      border-color: ${(p) => p.theme.theme["onhover-control-cl-border"]};;
     }
     &* {
       width: 100%;
