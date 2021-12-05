@@ -15,7 +15,7 @@ html {
 body {
 
     font-family :sans-serif;
-    background-color: ${(p) => p.theme.theme["background-color"]};
+    background-color: ${(p) => p.theme.theme["onhover-Btn-Bg"]};
     min-height: 100vh;
     text-transform:capitalize;
     color:${(p) => p.theme.theme["color-btn"]};
